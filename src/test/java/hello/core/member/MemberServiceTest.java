@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
     MemberService memberService;
-    // 실행을 하기전에 appConfig 생성 -> memberService 할당, Test가 2개면 2번 실행된다.
+    // 실행을 하기전에 appConfig 생성 -> memberService 할당, Test 2개면 2번 실행된다.
     @BeforeEach
     public void beforeEach() {
         AppConfig appConfig = new AppConfig();

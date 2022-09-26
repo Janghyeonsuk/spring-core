@@ -20,6 +20,7 @@ public class OrderServiceTest {
         orderService = appConfig.orderService();
     }
 
+
 //    MemberService memberService = new MemberServiceImpl();
 //    OrderService orderService = new OrderServiceImpl();
 
@@ -27,11 +28,10 @@ public class OrderServiceTest {
     @DisplayName("주문 생성")
     void createOrder() {
         //given
-        Long memberId = 1l;
+        Long memberId =1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
-
-        //when
         memberService.join(member);
+        //when
         Order order = orderService.createOrder(memberId, "itemA", 10000);
 
         //then

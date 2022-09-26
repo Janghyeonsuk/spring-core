@@ -2,7 +2,7 @@ package hello.core.member;
 
 public class Member {
 
-    private long id;
+    private Long id;
     private String name;
     private Grade grade;
 
