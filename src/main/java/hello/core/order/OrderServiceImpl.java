@@ -15,9 +15,37 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-//    private final MemberRepository memberRepository = new MemoryMemberRepository();
-//    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+/*
+    // 필드 주입 -> 코드가 간결 but 자바로 테스트할 방법이 없음
+   @Autowired private final MemberRepository memberRepository;
+   @Autowired private final DiscountPolicy discountPolicy;
 
+   public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+*/
+
+//    private  MemberRepository memberRepository = new MemoryMemberRepository();
+//    private  DiscountPolicy discountPolicy = new RateDiscountPolicy();
+
+/*
+    // 수정자 주입 -> 선택적, 변경 가능성이 있는 의존관계에서 사용
+    // private  MemberRepository memberRepository; private  DiscountPolicy discountPolicy;로 final을 빼야함
+    @Autowired(required = false) // 선택적
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+*/
+
+    // 생성자 주입 -> 불변적, 필수값에 사용
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;

@@ -15,9 +15,11 @@ import org.springframework.context.annotation.FilterType;
 )
 public class AutoAppConfig {
 
+/*
     //자동 bean 주입과 수동 bean 주입 충돌 ->
     @Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
+*/
 }
