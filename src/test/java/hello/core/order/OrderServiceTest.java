@@ -50,4 +50,5 @@ public class OrderServiceTest {
         Member member = new Member(1L, "memberA", Grade.VIP);
         orderService.createOrder(1L, "itemA", 10000);
     }*/
+
 }
